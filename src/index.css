@@ -1,0 +1,376 @@
+Modern UI CSS variables
+:root {
+  /* Light theme variables */
+  --app-bg: #f8fafc;
+  --editor-bg: #ffffff;
+  --text-color: #334155;
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary-color: #64748b;
+  --border-color: #e2e8f0;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --button-bg: #f1f5f9;
+  --button-hover: #e2e8f0;
+  --button-active: #cbd5e1;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.08);
+  --toolbar-bg: #f8fafc;
+  --toolbar-border: #e2e8f0;
+
+  /* Light theme specific editor elements */
+  --editor-toolbar-bg: #ffffff;
+  --editor-toolbar-border: #e2e8f0;
+  --editor-content-bg: #ffffff;
+  --editor-content-border: #e2e8f0;
+  --editor-placeholder: #94a3b8;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --app-bg: #0f172a;
+  --editor-bg: #1e293b;
+  --text-color: #e2e8f0;
+  --primary-color: #3b82f6;
+  --primary-hover: #60a5fa;
+  --secondary-color: #94a3b8;
+  --border-color: #334155;
+  --button-bg: #1e293b;
+  --button-hover: #334155;
+  --button-active: #475569;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.4);
+  --toolbar-bg: #1e293b;
+  --toolbar-border: #334155;
+
+  /* Dark theme specific editor elements */
+  --editor-toolbar-bg: #1e293b;
+  --editor-toolbar-border: #334155;
+  --editor-content-bg: #1e293b;
+  --editor-content-border: #334155;
+  --editor-placeholder: #64748b;
+}
+
+/* CSS Reset and Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background-color: var(--app-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Layout Styles */
+.app-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding-top: 3rem;
+  }
+}
+
+.editor-container {
+  margin-top: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  background-color: var(--editor-bg);
+  transition: box-shadow 0.3s ease;
+}
+
+.editor-container:hover {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+/* Toolbar */
+
+/* ProseMirror Styling */
+/* .ProseMirror {
+  outline: none;
+  padding: 1.5rem;
+  min-height: 300px;
+  background-color: var(--editor-content-bg);
+  color: var(--text-color);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+} */
+/* 
+.ProseMirror:focus {
+  box-shadow: 0 0 0 2px var(--primary-color) inset;
+} */
+
+/* .ProseMirror p {
+  margin-bottom: 1rem;
+} */
+
+/* .ProseMirror h1, .ProseMirror h2, .ProseMirror h3, .ProseMirror h4, .ProseMirror h5, .ProseMirror h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  font-weight: 600;
+  line-height: 1.25;
+} */
+
+/* .ProseMirror h1 {
+  font-size: 2em;
+}
+
+.ProseMirror h2 {
+  font-size: 1.75em;
+}
+
+.ProseMirror h3 {
+  font-size: 1.5em;
+} */
+
+/* .ProseMirror ul, .ProseMirror ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+} */
+
+.ProseMirror blockquote {
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+/* .ProseMirror pre {
+  background-color: var(--editor-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+} */
+
+/* .ProseMirror code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+} */
+
+/* .ProseMirror a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+} */
+
+/* .ProseMirror a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+} */
+
+/* .ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+} */
+
+/* .ProseMirror img:hover {
+  transform: scale(1.01);
+}
+
+.ProseMirror .ProseMirror-selectednode {
+  outline: 2px solid var(--primary-color);
+} */
+
+/* Tables */
+/* .ProseMirror table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  margin: 1rem 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.ProseMirror th {
+  background: var(--toolbar-bg);
+  font-weight: 600;
+}
+
+.ProseMirror td, .ProseMirror th {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+  vertical-align: top;
+  position: relative;
+} */
+
+/* Task lists */
+/* .ProseMirror ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+
+.ProseMirror ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5em;
+}
+
+.ProseMirror ul[data-type="taskList"] li > label {
+  margin-right: 0.5em;
+  user-select: none;
+}
+
+.ProseMirror ul[data-type="taskList"] li > div {
+  flex: 1;
+}
+
+.ProseMirror ul[data-type="taskList"] input[type="checkbox"] {
+  appearance: none;
+  background-color: var(--editor-content-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+} */
+/* 
+.ProseMirror ul[data-type="taskList"] input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+Primary button
+.btn.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* Secondary button */
+.btn.btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: white;
+}
+
+.btn.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+/* Disabled button */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Button group */
+.btn.btn-group {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+.btn.btn-group:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.btn.btn-group:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Language control buttons */
+.language-btn {
+  text-transform: capitalize;
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.language-btn:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: all 0.25s ease;
+}
+
+.language-btn:hover:after {
+  width: 80%;
+  left: 10%;
+}
+
+.language-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.language-btn.active:after {
+  width: 100%;
+  left: 0;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--button-bg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(45deg);
+  background: var(--button-hover);
+}
+
+/* Button container */
+.btn-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+} */

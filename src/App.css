@@ -1,0 +1,19 @@
+/* filepath: c:\Users\hp\Desktop\dev\Projects\react-tiptap\src\App.css */
+
+
+
+
+
+
+
+
+/* Style the content area of the editor */
+.editor-wrapper.full-height .ProseMirror {
+  flex: 1;
+  height: 60vh !important; /* Override any inline styles */
+  min-height: 0 !important; /* Remove min-height constraint */
+  max-height: none !important; /* Remove any max-height */
+  overflow-y: auto;
+}
+
+/* Ensure the toolbar doesn't grow */
